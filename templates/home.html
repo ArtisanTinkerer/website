@@ -1,13 +1,19 @@
+
 {%  extends "base.html" %}
+{% load static %}
 
 {% block content %}
-<h1>Mick Byrne - Web Framework Specialist</h1>
-<p>{%  now "DATETIME_FORMAT" %}</p>
-<p>There are {{ inventory_list|length }} in the inventory.</p>
-<ul>
-    {% for item in inventory_list %}
-    <li>{{ item  }}</li>
-    {%   endfor %}
-</ul>
+<div class="card shadow-lg border-0" style="width: 18rem;">
+  <div class="card-header bg-primary text-white text-center">
+    Web Framework Specialist
+  </div>
+  <img src="{% static 'images/me.jpg' %}" class="card-img-top" alt="Profile Image">
+  <div class="card-body">
+    <h5 class="card-title text-center">Mick</h5>
+    <p class="card-text text-muted">
+      Mick has over a decade of experience working with web frameworks.
+    </p>
+  </div>
+</div>
 {% endblock %}
 
