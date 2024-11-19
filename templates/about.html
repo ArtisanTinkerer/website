@@ -1,6 +1,22 @@
-{%  extends "base.html" %}
+{% extends "base.html" %}
 {% block content %}
-<h1>About Mick</h1>
-<p>Email {{ email  }}</p>
-<p>Github {{ github  }}</p>
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="about-section text-center p-5 shadow rounded bg-light">
+                <h1 class="mb-4">About Mick</h1>
+                <p class="mb-2">
+                    <strong>Email:</strong> 
+                    <a href="mailto:{{ email }}" class="text-decoration-none">{{ email }}</a>
+                </p>
+                <p>
+                    <strong>GitHub:</strong> 
+                    <a href="{{ github }}" target="_blank" class="text-decoration-none">{{ github }}</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
 {% endblock %}
