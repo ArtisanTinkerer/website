@@ -32,10 +32,20 @@
           <a class="nav-link" href="{% url "post_new" %}">New Post</a>
         </li>
       </ul>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
+
+        {% if user.is_authenticated %}
+
+      <form class="d-flex" action="{%  url 'logout' %}" method="post">
+      {% csrf_token %}
+            <button class="btn btn-outline-success" type="submit">Logout</button>
       </form>
+
+        {% else %}
+        <p>You are not logged in.</p>
+        <a href="{% url 'login' %}">Log In</a>
+        {% endif %}
+
+
     </div>
   </div>
 </nav>

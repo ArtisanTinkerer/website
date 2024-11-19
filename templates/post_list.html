@@ -1,15 +1,21 @@
-{%  extends "base.html" %}
+{% extends "base.html" %}
 {% block content %}
-<h1>Posts</h1>
 
+<div class="container mt-5">
+    <h1 class="mb-4 text-center">Posts</h1>
     {% for post in post_list %}
-        <div class="post-entry">
-            <h2><a href="{{   post.get_absolute_url }}">{{ post.title }}</a></h2>
-            <p>Author : {{ post.author }}</p>
-            <p>{{ post.body }}</p>
+        <div class="post-entry mb-4 p-4 shadow rounded bg-light">
+            <h2 class="mb-2">
+                <a href="{{ post.get_absolute_url }}" class="text-decoration-none text-dark">
+                    {{ post.title }}
+                </a>
+            </h2>
+            <p class="mb-1"><strong>Author:</strong> {{ post.author }}</p>
+            <p class="text-muted">{{ post.body }}</p>
         </div>
-
+    {% empty %}
+        <p class="text-center text-muted">No posts available.</p>
     {% endfor %}
-
+</div>
 
 {% endblock %}
