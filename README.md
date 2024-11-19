@@ -1,2 +1,2 @@
 # website
-Personal website and training
+Playing with Django
